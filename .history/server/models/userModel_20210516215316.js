@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    gender: String
+    
 })
 
 const Users= mongoose.model('users',schema);

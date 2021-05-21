@@ -23,7 +23,7 @@ exports.create= (req,res)=>{
 exports.find=(req,res)=>{
     if(req.query.name){
         const name = req.query.name;
-        Users.find({name:{ $regex: '.*' + name + '.*'}})
+        Users.find({'name':name})
         .then(data=>{
             if(!data){
                 res.status(404).send({message: `Not found`})
@@ -33,8 +33,8 @@ exports.find=(req,res)=>{
             }
         })
     }else if(req.query.id){
-        const id = req.query.id;
-        Users.findById(id)
+        const id = req.query.name;
+        Users.find({'name':name})
         .then(data=>{
             if(!data){
                 res.status(404).send({message: `Not found`})

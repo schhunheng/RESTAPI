@@ -5,11 +5,7 @@ const schema = new mongoose.Schema({
         type:String,
         required: true,
     },
-    email:{
-        type:String,
-        required:true,
-    },
-    gender: String
+    email:
 })
 
 const Users= mongoose.model('users',schema);

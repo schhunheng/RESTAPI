@@ -6,10 +6,8 @@ const schema = new mongoose.Schema({
         required: true,
     },
     email:{
-        type:String,
-        required:true,
-    },
-    gender: String
+        type:
+    }
 })
 
 const Users= mongoose.model('users',schema);
