@@ -52,33 +52,6 @@ exports.find=(req,res)=>{
     }
 }
 
-exports.update=(req,res)=>{
-    if(!req.body){
-        return res.status(400).send({message: "Data to update cannot be empty "})
-    }
-    const id =req.params.id;
-    Users.findByIdAndUpdate(id,req.body,{useFindAndModify:false})
-    .then((data)=>{
-        if(!data){
-            res.status(404).send({message:`can Update user with ${id} is not match`})
-        }else{
-            res.send(data);
-        }
-    }).catch((err)=>{
-        res.status(500).send({message: "Error Update!"})
-    })
-}
 
-exports.delete=(req,res)=>{
-    const id = req.params.id;
-    Users.findByIdAndDelete(id)
-    .then(data=>{
-        if(!data){
-            res.status(404).send({message: ` Cannot delete ${id} `})
-        }else{
-            res.send({
-                message: ` User was deleted!`
-            })
-        }
-    })
-}
+
+

@@ -11,6 +11,6 @@ route.get('/api/users',userController.find);
 
 
 // Product API
-route.post('/api/products',productController.create);
-route.get('/api/products',productController.find);
+route.post('/api/products',productController)
+
 module.exports = route
