@@ -1,15 +1,18 @@
 const Users = require('../models/userModel');
 
+
 exports.create= (req,res)=>{
+    
     if(!req.body){
         res.status(400).send({message: `Content cannot empty`})
         return ;
     }
     const user = new Users({
         name : req.body.name,
-        email:req.body.email,
+        email: req.body.email,
         gender: req.body.gender
     })
+   console.log(req.body)
     user.save(user)
     .then(data=>{
         res.send(data);
@@ -71,8 +74,10 @@ exports.update=(req,res)=>{
 
 exports.delete=(req,res)=>{
     const id = req.params.id;
+    
     Users.findByIdAndDelete(id)
     .then(data=>{
+        
         if(!data){
             res.status(404).send({message: ` Cannot delete ${id} `})
         }else{
@@ -80,5 +85,7 @@ exports.delete=(req,res)=>{
                 message: ` User was deleted!`
             })
         }
+    }).catch((err)=>{
+        console.log(err);
     })
 }

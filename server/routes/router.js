@@ -8,6 +8,8 @@ const productController = require('../controllers/productController')
 // User API 
 route.post('/api/users',userController.create);
 route.get('/api/users',userController.find);
+route.delete('/api/users/:id',userController.delete);
+route.put('/api/users/:id',userController.update);
 
 
 // Product API
