@@ -10,7 +10,8 @@ exports.create= (req,res)=>{
     const user = new Users({
         name : req.body.name,
         email: req.body.email,
-        gender: req.body.gender
+        gender: req.body.gender,
+        profile : req.body.profile
     })
    console.log(req.body)
     user.save(user)

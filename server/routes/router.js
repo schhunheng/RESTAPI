@@ -5,6 +5,9 @@ const userController = require('../controllers/userController');
 const productController = require('../controllers/productController')
 
 
+route.get('/',(req,res)=>{
+    res.status(200).send({message: 'api/users'})
+});
 // User API 
 route.post('/api/users',userController.create);
 route.get('/api/users',userController.find);

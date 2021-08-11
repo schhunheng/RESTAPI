@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
+
     name : {
         type:String,
         required: true,
@@ -9,6 +10,7 @@ const schema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    profile: String,
     gender: String
 })
 
